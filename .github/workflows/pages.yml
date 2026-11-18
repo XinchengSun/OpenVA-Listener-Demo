@@ -1,0 +1,32 @@
+name: Publish comparison page
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency: pages
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.release.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble verified media
+        run: |
+          mkdir public
+          cp index.html *.jpg public/
+          jq -r '.[] | [.file, .url, .sha256] | @tsv' media.json | while IFS=$'\t' read -r file url digest; do
+            curl --fail --location --retry 4 --silent --show-error "$url" -o "public/$file"
+            echo "$digest  public/$file" | sha256sum --check -
+          done
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - id: release
+        uses: actions/deploy-pages@v4
