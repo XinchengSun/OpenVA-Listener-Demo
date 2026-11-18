@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenVA 实验记录</title>
+  <style>
+    :root { color-scheme: light; font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; color: #222522; background: #fafaf8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 1200px; margin: 0 auto; padding: clamp(30px, 4.8vw, 72px) clamp(18px, 4vw, 54px); }
+    section { scroll-margin-top: 20px; }
+    section + section { margin-top: clamp(40px, 6vw, 76px); }
+    time { display: block; color: #60665e; font-size: 14px; line-height: 1.5; font-variant-numeric: tabular-nums; }
+    h2 { margin: 5px 0 13px; font-size: clamp(18px, 2vw, 25px); line-height: 1.45; letter-spacing: -.02em; font-weight: 560; text-wrap: pretty; }
+    video { width: 100%; height: auto; display: block; background: #111; border-radius: 4px; }
+    .timeline { display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 12px; font-variant-numeric: tabular-nums; color: #4a504b; }
+    .seek { flex: 1; min-width: 0; margin: 0; accent-color: #315c4a; cursor: pointer; }
+    .sound { display: grid; place-items: center; padding: 4px; border: 0; background: transparent; color: inherit; cursor: pointer; }
+    .sound svg { width: 18px; height: 18px; }
+    .sound .waves, .sound.on .cross { display: none; }
+    .sound.on .waves { display: block; }
+    video:focus-visible, .seek:focus-visible, button:focus-visible { outline: 2px solid #315c4a; outline-offset: 2px; }
+    @media(min-width:700px){ main { max-width:min(1180px, calc((100svh - 142px) * 1.4 + 64px)); padding:24px 32px 56px; } }
+    .quality { font:inherit; font-size:12px; background:transparent; border:0; color:#4a504b; max-width:7em; }
+    .player-box { position:relative; }
+    .manual-play { position:absolute; inset:0; margin:auto; width:64px; height:40px; color:white; background:#212523d9; border:1px solid #777; border-radius:5px; font:inherit; }
+    [hidden] { display:none !important; }
+  </style>
+</head>
+<body>
+<main>
+  <section id="dialogue" aria-labelledby="title-dialogue">
+    <time datetime="2026-11-18">2026.11.18</time>
+    <h2 id="title-dialogue">Listener 微调 · 原版 / 12 帧监督 / 95 帧监督</h2>
+    <div class="player-box"><video controls autoplay muted playsinline preload="none" width="1536" height="1096" poster="six.jpg" aria-labelledby="title-dialogue" data-mobile="six-mobile.mp4" data-master="https://huggingface.co/datasets/xinxin713/openva-hd-lia-listener-121600/resolve/main/lossless/six.mp4"></video><button hidden type="button" class="manual-play">播放</button></div>
+    <div class="timeline" role="group" aria-label="播放控制">
+      <span class="elapsed">0:00</span>
+      <input type="range" class="seek" min="0" max="63" step="0.04" value="0" aria-label="播放进度">
+      <span class="duration">1:03</span>
+      <select class="quality" aria-label="视频画质"><option value="master">原始无损</option><option value="mobile">手机兼容</option></select>
+      <button class="sound" type="button" aria-label="开启声音" title="开启声音">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9h4l5-4v14l-5-4H3z"/><path class="cross" d="m16 9 5 6m0-6-5 6"/><path class="waves" d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+  <section id="long" aria-labelledby="title-long">
+    <time datetime="2026-11-18">2026.11.18</time>
+    <h2 id="title-long">连续聆听 · 12 帧监督 1650 步 / 95 帧监督 2500 步</h2>
+    <div class="player-box"><video controls autoplay muted playsinline preload="none" width="1536" height="560" poster="long.jpg" aria-labelledby="title-long" data-mobile="long-mobile.mp4" data-master="https://huggingface.co/datasets/xinxin713/openva-hd-lia-listener-121600/resolve/main/lossless/long.mp4"></video><button hidden type="button" class="manual-play">播放</button></div>
+    <div class="timeline" role="group" aria-label="播放控制">
+      <span class="elapsed">0:00</span>
+      <input type="range" class="seek" min="0" max="177.4" step="0.04" value="0" aria-label="播放进度">
+      <span class="duration">2:57</span>
+      <select class="quality" aria-label="视频画质"><option value="master">原始无损</option><option value="mobile">手机兼容</option></select>
+      <button class="sound" type="button" aria-label="开启声音" title="开启声音">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9h4l5-4v14l-5-4H3z"/><path class="cross" d="m16 9 5 6m0-6-5 6"/><path class="waves" d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+  <section id="musk" aria-labelledby="title-musk">
+    <time datetime="2026-11-16">2026.11.16</time>
+    <h2 id="title-musk">LIA 渲染器 · 原版 / 113800 步</h2>
+    <div class="player-box"><video controls autoplay muted playsinline preload="none" width="1024" height="552" poster="musk.jpg" aria-labelledby="title-musk" data-mobile="musk-mobile.mp4" data-master="https://huggingface.co/datasets/xinxin713/openva-hd-lia-listener-121600/resolve/main/lossless/musk.mp4"></video><button hidden type="button" class="manual-play">播放</button></div>
+    <div class="timeline" role="group" aria-label="播放控制">
+      <span class="elapsed">0:00</span>
+      <input type="range" class="seek" min="0" max="41.2" step="0.04" value="0" aria-label="播放进度">
+      <span class="duration">0:41</span>
+      <select class="quality" aria-label="视频画质"><option value="master">原始无损</option><option value="mobile">手机兼容</option></select>
+      <button class="sound" type="button" aria-label="开启声音" title="开启声音">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9h4l5-4v14l-5-4H3z"/><path class="cross" d="m16 9 5 6m0-6-5 6"/><path class="waves" d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+  <section id="musk-three" aria-labelledby="title-musk-three">
+    <time datetime="2026-11-15">2026.11.15</time>
+    <h2 id="title-musk-three">LIA 渲染器 · 原版 / 58600 步 / 11800 步</h2>
+    <div class="player-box"><video controls autoplay muted playsinline preload="none" width="1536" height="544" poster="musk-three.jpg" aria-labelledby="title-musk-three" data-mobile="musk-three-mobile.mp4" data-master="https://huggingface.co/datasets/xinxin713/openva-hd-lia-listener-121600/resolve/main/lossless/musk-three.mp4"></video><button hidden type="button" class="manual-play">播放</button></div>
+    <div class="timeline" role="group" aria-label="播放控制">
+      <span class="elapsed">0:00</span>
+      <input type="range" class="seek" min="0" max="41.2" step="0.04" value="0" aria-label="播放进度">
+      <span class="duration">0:41</span>
+      <select class="quality" aria-label="视频画质"><option value="master">原始无损</option><option value="mobile">手机兼容</option></select>
+      <button class="sound" type="button" aria-label="开启声音" title="开启声音">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9h4l5-4v14l-5-4H3z"/><path class="cross" d="m16 9 5 6m0-6-5 6"/><path class="waves" d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+</main>
+<script>
+  const clips = Array.from(document.querySelectorAll('video'));
+  const clock = t => Math.floor(t / 60) + ':' + String(Math.floor(t % 60)).padStart(2, '0');
+  for (const clip of clips) {
+    const section = clip.closest('section');
+    const seek = section.querySelector('.seek');
+    const elapsed = section.querySelector('.elapsed');
+    const duration = section.querySelector('.duration');
+    const sound = section.querySelector('.sound');
+    const quality = section.querySelector('.quality');
+    const manual = section.querySelector('.manual-play');
+    const mobile = matchMedia('(pointer:coarse)').matches || /iPhone|iPad|Android|Mobile/i.test(navigator.userAgent);
+    const masterSupported = clip.canPlayType('video/mp4; codecs="vp09.01.40.08, fLaC"') !== '';
+    quality.value = mobile || !masterSupported ? 'mobile' : 'master';
+    clip.dataset.src = clip.dataset[quality.value];
+    let resumeAt = 0;
+    quality.addEventListener('change', () => {
+      resumeAt = clip.currentTime || 0;
+      clip.dataset.src = clip.dataset[quality.value]; clip.src = clip.dataset.src;
+      clip.play().catch(() => { if (clip.paused) manual.hidden = false; });
+    });
+    clip.addEventListener('loadedmetadata', () => {
+      if (resumeAt > 0) { clip.currentTime = Math.min(resumeAt,clip.duration); resumeAt = 0; }
+    });
+    clip.addEventListener('playing', () => {manual.hidden = true;});
+    clip.addEventListener('error', () => {
+      if (quality.value === 'master') {quality.value='mobile';quality.dispatchEvent(new Event('change'));}
+    });
+    manual.onclick = () => { clip.play().then(()=>{manual.hidden=true;}).catch(()=>{}); };
+    let dragging = false;
+    clip.controls = false;
+    clip.tabIndex = 0;
+    function update() {
+      if (Number.isFinite(clip.duration)) { seek.max = clip.duration; duration.textContent = clock(clip.duration); }
+      if (!dragging && !clip.seeking) seek.value = clip.currentTime;
+      elapsed.textContent = clock(Number(seek.value));
+      seek.setAttribute('aria-valuetext', elapsed.textContent + ' / ' + duration.textContent);
+    }
+    function toggle() {
+      if (clip.paused) clip.play().catch(() => {});
+      else clip.pause();
+    }
+    clip.addEventListener('click', toggle);
+    clip.addEventListener('keydown', e => {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); }
+    });
+    clip.addEventListener('dblclick', () => { if (!document.fullscreenElement) section.requestFullscreen?.().catch(() => {}); else document.exitFullscreen(); });
+    clip.addEventListener('loadedmetadata', update);
+    clip.addEventListener('timeupdate', update);
+    clip.addEventListener('seeked', update);
+    seek.addEventListener('input', () => { dragging = true; elapsed.textContent = clock(Number(seek.value)); });
+    seek.addEventListener('change', () => {
+      const t = Number(seek.value);
+      const apply = () => { clip.currentTime = Math.min(t, clip.duration); dragging = false; };
+      if (Number.isFinite(clip.duration)) apply();
+      else { clip.addEventListener('loadedmetadata', apply, {once:true}); if (!clip.hasAttribute('src')) clip.src = clip.dataset.src; }
+    });
+    seek.addEventListener('pointercancel', () => { dragging = false; update(); });
+    sound.addEventListener('click', () => { clip.muted = !clip.muted; });
+    clip.addEventListener('volumechange', () => {
+      const label = clip.muted ? '开启声音' : '静音';
+      sound.classList.toggle('on', !clip.muted);
+      sound.setAttribute('aria-label', label); sound.title = label;
+    });
+  }
+  let current, scheduled = false;
+  let preferred = document.getElementById(location.hash.slice(1))?.querySelector('video') || clips[0];
+  for (const event of ['wheel','touchmove']) window.addEventListener(event, () => { preferred = null; }, {passive:true});
+  window.addEventListener('keydown', e => {
+    if (!e.target.matches('input,button') && ['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key)) preferred = null;
+  });
+  window.addEventListener('hashchange', () => {
+    preferred = document.getElementById(location.hash.slice(1))?.querySelector('video') || null;
+  });
+
+  function playVisible() {
+    scheduled = false;
+    if (document.hidden) return;
+    let selected = null;
+    let best = 0;
+    for (const clip of clips) {
+      const box = clip.getBoundingClientRect();
+      if (!box.height) continue;
+      const visible = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
+      const fraction = visible / Math.min(box.height, innerHeight);
+      if (clip === preferred && fraction >= .2) { best = fraction; selected = clip; break; }
+      if (fraction > best || (fraction === best && scrollY + innerHeight >= document.documentElement.scrollHeight - 2)) {
+        best = fraction; selected = clip;
+      }
+    }
+    if (best < 0.15) selected = null;
+    if (selected === current) return;
+    if (current) current.pause();
+    current = selected;
+    if (selected) {
+      if (!selected.hasAttribute('src')) selected.src = selected.dataset.src;
+      selected.play().catch(() => { if (selected === current && selected.paused) selected.closest('section').querySelector('.manual-play').hidden = false; });
+    }
+  }
+  function schedule() {
+    if (!scheduled) { scheduled = true; requestAnimationFrame(playVisible); }
+  }
+  window.addEventListener('load', schedule);
+  window.addEventListener('pageshow', schedule);
+  window.addEventListener('hashchange', schedule);
+  window.addEventListener('resize', schedule);
+  document.addEventListener('scroll', schedule, {passive:true});
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && current) { current.pause(); current = null; }
+    else schedule();
+  });
+  window.addEventListener('pageshow', () => {
+    const id = location.hash.slice(1);
+    if (id) document.getElementById(id)?.scrollIntoView();
+    schedule();
+  });
+  if (document.readyState === 'complete') schedule();
+</script>
+</body>
+</html>
