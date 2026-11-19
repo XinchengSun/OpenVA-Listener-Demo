@@ -24,6 +24,20 @@ jobs:
             curl --fail --location --retry 4 --silent --show-error "$url" -o "public/$file"
             echo "$digest  public/$file" | sha256sum --check -
           done
+      - uses: actions/cache@v4
+        id: previews
+        with:
+          path: previews
+          key: listener-previews-${{ hashFiles('media.json', 'scripts/make_previews.py') }}
+      - name: Encode and check low-bandwidth playback copies
+        if: steps.previews.outputs.cache-hit != 'true'
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq ffmpeg
+          fi
+          python3 scripts/make_previews.py
+      - run: cp previews/*-stream.mp4 public/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
