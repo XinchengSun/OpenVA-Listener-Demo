@@ -18,5 +18,15 @@
     "file": "musk-three-mobile.mp4",
     "url": "https://huggingface.co/datasets/xinxin713/openva-hd-lia-listener-121600/resolve/927891fb3e0da96c88e4aa461a12747b9f3a9a98/musk-original-last58600-best11800.mp4",
     "sha256": "5ca558f831bfc42abda4f22c8d2cc0b8e9a544006396bb4905280c7fc4aad8e2"
+  },
+  {
+    "file": "listener-female-18450-8800.mp4",
+    "url": "https://huggingface.co/datasets/xinxin713/openva-hd-lia-listener-121600/resolve/8f80796fd55636e83fb918d685909c6e1ba9e56f/listener-20261119/female-mobile.mp4",
+    "sha256": "60651c17288ddd96df0482a6cfb5147932c2f6c18b6d3ad9e01a54310038913c"
+  },
+  {
+    "file": "listener-musk-18450-8800.mp4",
+    "url": "https://huggingface.co/datasets/xinxin713/openva-hd-lia-listener-121600/resolve/fa2ac9dca3ab300a2b55f224f6d6422d3f185e64/listener-20261119/musk-mobile.mp4",
+    "sha256": "aae4add806772f9ab8e0f40cbba261c58bbdcb32a97ba703ebf69f3ae05c1ed0"
   }
 ]

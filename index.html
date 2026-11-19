@@ -30,6 +30,38 @@
 </head>
 <body>
 <main>
+  <section id="listener-female" aria-labelledby="title-listener-female">
+    <time datetime="2026-11-19">2026.11.19</time>
+    <h2 id="title-listener-female">女性头像 · 纯聆听 · 原版 / 12 帧 18450 步 / 95 帧 8800 步</h2>
+    <div class="player-box"><video controls autoplay muted playsinline preload="none" width="1536" height="560" poster="listener-female-18450-8800.jpg" aria-labelledby="title-listener-female" data-mobile="listener-female-18450-8800.mp4" data-master="listener-female-18450-8800.mp4"></video><button hidden type="button" class="manual-play">播放</button></div>
+    <div class="timeline" role="group" aria-label="播放控制">
+      <span class="elapsed">0:00</span>
+      <input type="range" class="seek" min="0" max="126" step="0.04" value="0" aria-label="播放进度">
+      <span class="duration">2:06</span>
+      <select class="quality" aria-label="视频画质"><option value="mobile">手机兼容</option></select>
+      <button class="sound" type="button" aria-label="开启声音" title="开启声音">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9h4l5-4v14l-5-4H3z"/><path class="cross" d="m16 9 5 6m0-6-5 6"/><path class="waves" d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+  <section id="listener-musk" aria-labelledby="title-listener-musk">
+    <time datetime="2026-11-19">2026.11.19</time>
+    <h2 id="title-listener-musk">马斯克肖像 · 纯聆听 · 原版 / 12 帧 18450 步 / 95 帧 8800 步</h2>
+    <div class="player-box"><video controls autoplay muted playsinline preload="none" width="1536" height="560" poster="listener-musk-18450-8800.jpg" aria-labelledby="title-listener-musk" data-mobile="listener-musk-18450-8800.mp4" data-master="listener-musk-18450-8800.mp4"></video><button hidden type="button" class="manual-play">播放</button></div>
+    <div class="timeline" role="group" aria-label="播放控制">
+      <span class="elapsed">0:00</span>
+      <input type="range" class="seek" min="0" max="126" step="0.04" value="0" aria-label="播放进度">
+      <span class="duration">2:06</span>
+      <select class="quality" aria-label="视频画质"><option value="mobile">手机兼容</option></select>
+      <button class="sound" type="button" aria-label="开启声音" title="开启声音">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9h4l5-4v14l-5-4H3z"/><path class="cross" d="m16 9 5 6m0-6-5 6"/><path class="waves" d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
+        </svg>
+      </button>
+    </div>
+  </section>
   <section id="dialogue" aria-labelledby="title-dialogue">
     <time datetime="2026-11-18">2026.11.18</time>
     <h2 id="title-dialogue">Listener 微调 · 原版 / 12 帧监督 / 95 帧监督</h2>
@@ -108,7 +140,7 @@
     const manual = section.querySelector('.manual-play');
     const mobile = matchMedia('(pointer:coarse)').matches || /iPhone|iPad|Android|Mobile/i.test(navigator.userAgent);
     const masterSupported = clip.canPlayType('video/mp4; codecs="vp09.01.40.08, fLaC"') !== '';
-    quality.value = mobile || !masterSupported ? 'mobile' : 'master';
+    quality.value = mobile || !masterSupported || !quality.querySelector('option[value=master]') ? 'mobile' : 'master';
     clip.dataset.src = clip.dataset[quality.value];
     let resumeAt = 0;
     quality.addEventListener('change', () => {
