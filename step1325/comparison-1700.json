@@ -1,0 +1,364 @@
+{
+  "01": {
+    "conditioning_audio_sha256": "c99bf95e972579614a70882ab736c85e0da7ee0f2c8192c8f717d12b48617bc1",
+    "noise_sha256": "6b1fb8d094c259e965be156bd029ae44aa3567f0061dcbd038a78a0042e215a6",
+    "source_face_sha256": "78be5e8e97a9cd93b5525251879ae69461eaed1f902688c4e35f97190a941ed8",
+    "checkpoint_sha256": [
+      "b91cc2df6f510d9b1c0cc783bed78662343b23aea92c61c11640cf0260aa5741",
+      "f4608cb1846074f0426fb8e6ef1c94f98c6a547244c52c2c0a5aa601689565a7"
+    ],
+    "motion_sha256": [
+      "9d9a004907dcc4e2f593eb82a42dc80079405bda163f559ee1051ec2e8bb93ac",
+      "4680d7fb020655e8af66d80b2b2479f26b6ca4734153a30210c0794dbd5e0c13",
+      "53af2cdc4a2a64915328e57d654a5749f3ee3ef47cae7a6926cf570afad8300b"
+    ],
+    "source_video_sha256": [
+      "7d83346cb3aaeca43d67d855cc6f9e3665c0eefb2f163440fb60ddb1edc1058a",
+      "46936013576316c650f68bbbca6e23821baee9ef3148afad8d1a9882aa22ac87"
+    ],
+    "final_video_sha256": "1e419989ac8cf93bd4798a9edd02012f41005829de015b55db28dbd60f4148ef",
+    "metrics": {
+      "original": {
+        "coverage": 1.0,
+        "mild_seconds": 4.04,
+        "wide_seconds": 0.12,
+        "lip_p90": 0.003661403715841023,
+        "deep": 13,
+        "multi_deep": 5,
+        "flash": 8
+      },
+      "step1325": {
+        "coverage": 1.0,
+        "mild_seconds": 0.84,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.002525158317209162,
+        "deep": 7,
+        "multi_deep": 3,
+        "flash": 4
+      },
+      "step1700": {
+        "coverage": 1.0,
+        "mild_seconds": 0.8,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.002423088192599417,
+        "deep": 7,
+        "multi_deep": 2,
+        "flash": 5
+      }
+    }
+  },
+  "02": {
+    "conditioning_audio_sha256": "c99bf95e972579614a70882ab736c85e0da7ee0f2c8192c8f717d12b48617bc1",
+    "noise_sha256": "6b1fb8d094c259e965be156bd029ae44aa3567f0061dcbd038a78a0042e215a6",
+    "source_face_sha256": "fb3536551a5cfbfe5fd46e45c7afb3d4d7af5defaae079c00ed4b7eb2e89be0b",
+    "checkpoint_sha256": [
+      "b91cc2df6f510d9b1c0cc783bed78662343b23aea92c61c11640cf0260aa5741",
+      "f4608cb1846074f0426fb8e6ef1c94f98c6a547244c52c2c0a5aa601689565a7"
+    ],
+    "motion_sha256": [
+      "f7fdb641b3d5891b0d03af809d6a14f7823929278184861ad374ab67c27b657b",
+      "89016d18d623e0200e8d1d4c7d752a29fd129ecb87e82727a4344befdbb75f6b",
+      "bcfa4ce9444a6e8fb18afc1801dec74a337f4ecdd212d2f6c9a608565c93144c"
+    ],
+    "source_video_sha256": [
+      "29e22d21d8b602f5852ecfee5099f4beab146fcc9c0b9089d62468e13e0da288",
+      "c36f3e57504b67e39aebde24b1d6f085c1cefa6dd13dc14ec3300a5ab851b345"
+    ],
+    "final_video_sha256": "244b6dc03717c3ee04fe9d8e5470d4f18c706cb8fd432f4062651101e8e185dd",
+    "metrics": {
+      "original": {
+        "coverage": 1.0,
+        "mild_seconds": 1.36,
+        "wide_seconds": 0.2,
+        "lip_p90": 0.003105537551255974,
+        "deep": 5,
+        "multi_deep": 1,
+        "flash": 4
+      },
+      "step1325": {
+        "coverage": 1.0,
+        "mild_seconds": 0.88,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.003272707163390172,
+        "deep": 0,
+        "multi_deep": 0,
+        "flash": 0
+      },
+      "step1700": {
+        "coverage": 1.0,
+        "mild_seconds": 0.96,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.0032162049135501364,
+        "deep": 2,
+        "multi_deep": 0,
+        "flash": 2
+      }
+    }
+  },
+  "03": {
+    "conditioning_audio_sha256": "c99bf95e972579614a70882ab736c85e0da7ee0f2c8192c8f717d12b48617bc1",
+    "noise_sha256": "6b1fb8d094c259e965be156bd029ae44aa3567f0061dcbd038a78a0042e215a6",
+    "source_face_sha256": "e95b2be2f888b1071a1456bfe435335b4c978d14483f4f997f8a0677cd0a286f",
+    "checkpoint_sha256": [
+      "b91cc2df6f510d9b1c0cc783bed78662343b23aea92c61c11640cf0260aa5741",
+      "f4608cb1846074f0426fb8e6ef1c94f98c6a547244c52c2c0a5aa601689565a7"
+    ],
+    "motion_sha256": [
+      "22f0c5113401fef3b5805a774e09add5f999c1fa90a5eee2e7c458808b5d00e4",
+      "3f1c55ac9ad91f204a3bab978bd54140d736cf2907fe17c3fb4acd18f7652570",
+      "61a407342716a805e5bd3a082ff8c70d64f0ff3717f708d3758fa06949068a40"
+    ],
+    "source_video_sha256": [
+      "fce18a0fb62eca9922052421b2d771dca05fa9cfad4b38f8a8dc8d9e21eaff7d",
+      "dcec00fb23ecb928aa9cf09eea134d3619ea97388f1e14e4261a53774f7781e2"
+    ],
+    "final_video_sha256": "6a302277b5b9f55b5b9886218cdb9d726b54c56aa5b858cc1861c9793bec20cb",
+    "metrics": {
+      "original": {
+        "coverage": 1.0,
+        "mild_seconds": 1.72,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.0067483008277718646,
+        "deep": 9,
+        "multi_deep": 3,
+        "flash": 6
+      },
+      "step1325": {
+        "coverage": 1.0,
+        "mild_seconds": 0.24,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.00765814591972102,
+        "deep": 9,
+        "multi_deep": 4,
+        "flash": 5
+      },
+      "step1700": {
+        "coverage": 1.0,
+        "mild_seconds": 0.48,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.0077574635907860755,
+        "deep": 10,
+        "multi_deep": 5,
+        "flash": 5
+      }
+    }
+  },
+  "04": {
+    "conditioning_audio_sha256": "c99bf95e972579614a70882ab736c85e0da7ee0f2c8192c8f717d12b48617bc1",
+    "noise_sha256": "6b1fb8d094c259e965be156bd029ae44aa3567f0061dcbd038a78a0042e215a6",
+    "source_face_sha256": "64cf2c2bdbc3c015715ca6aa361b98c2ec5e53e1d488ddd91049d8d4e7a0cdea",
+    "checkpoint_sha256": [
+      "b91cc2df6f510d9b1c0cc783bed78662343b23aea92c61c11640cf0260aa5741",
+      "f4608cb1846074f0426fb8e6ef1c94f98c6a547244c52c2c0a5aa601689565a7"
+    ],
+    "motion_sha256": [
+      "918449f6d178368488401cdb1fb9537a9174a8c431f052c6cf008f746b3f814d",
+      "9952f98dbe8e6ec4910f8b9c0d6a6bda81f7fb6c8a660690b64f60a28d718bbf",
+      "f1853cf59f94177987701f30ec7ada15e9cd67ae733f9a4ddd786eb17ef756f1"
+    ],
+    "source_video_sha256": [
+      "93d646b0e1f04107d6b1b186c90080d6ec08f7ff74ad54fca7c95d263ddb96fb",
+      "05f883e90680acae505a3760db74dd2bdb9160e527f0f956ba628abc10b58c39"
+    ],
+    "final_video_sha256": "5e8f739f253ae3c6bfb1a102603b14a5d10df26647f1ce0761d01175293cb8aa",
+    "metrics": {
+      "original": {
+        "coverage": 1.0,
+        "mild_seconds": 1.36,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.0011807420223989029,
+        "deep": 13,
+        "multi_deep": 6,
+        "flash": 7
+      },
+      "step1325": {
+        "coverage": 1.0,
+        "mild_seconds": 0.36,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.0007824052486054459,
+        "deep": 19,
+        "multi_deep": 6,
+        "flash": 13
+      },
+      "step1700": {
+        "coverage": 1.0,
+        "mild_seconds": 0.44,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.0007614300810892893,
+        "deep": 19,
+        "multi_deep": 5,
+        "flash": 14
+      }
+    }
+  },
+  "05": {
+    "conditioning_audio_sha256": "c99bf95e972579614a70882ab736c85e0da7ee0f2c8192c8f717d12b48617bc1",
+    "noise_sha256": "6b1fb8d094c259e965be156bd029ae44aa3567f0061dcbd038a78a0042e215a6",
+    "source_face_sha256": "fac21ce031284dfbd567d9a2c813e7501ed05e6239fa7934a7b2e80a886a74a7",
+    "checkpoint_sha256": [
+      "b91cc2df6f510d9b1c0cc783bed78662343b23aea92c61c11640cf0260aa5741",
+      "f4608cb1846074f0426fb8e6ef1c94f98c6a547244c52c2c0a5aa601689565a7"
+    ],
+    "motion_sha256": [
+      "f74ae3fcb101d1f60033e50b68156f1e9817d230ce5d50829c31663866c04d45",
+      "2225df9e186117deae29ea063f42e8dadc5ed481440ee40c4cc1904ac5733e62",
+      "9bea7ccf5a1dd3ae7efc521e27c6c0af028c859cdd803d45777cc78f584b28e5"
+    ],
+    "source_video_sha256": [
+      "c0186fda387cd6b9c2dc5d85e1f0e3a2c3cf0107511ea5b092fcba3003608f9e",
+      "e487219cd5b521c29348d0a03be7b9573baf5d1979a458746af0adf9ad6cbae2"
+    ],
+    "final_video_sha256": "7efa57b978b07a58bb2d9a7f729136c13e82a5b67dd406b29d4e433621f75360",
+    "metrics": {
+      "original": {
+        "coverage": 1.0,
+        "mild_seconds": 4.2,
+        "wide_seconds": 0.6,
+        "lip_p90": 0.003799871225592723,
+        "deep": 13,
+        "multi_deep": 5,
+        "flash": 8
+      },
+      "step1325": {
+        "coverage": 1.0,
+        "mild_seconds": 1.0,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.003791917833427463,
+        "deep": 2,
+        "multi_deep": 0,
+        "flash": 2
+      },
+      "step1700": {
+        "coverage": 1.0,
+        "mild_seconds": 1.0,
+        "wide_seconds": 0.0,
+        "lip_p90": 0.003631633011346516,
+        "deep": 4,
+        "multi_deep": 1,
+        "flash": 3
+      }
+    }
+  },
+  "comparison": {
+    "columns": [
+      "original",
+      1325,
+      1700
+    ],
+    "fps": 25,
+    "frames": 3150,
+    "seconds": 126,
+    "seed": 44,
+    "denoising_steps": 1,
+    "scope": "listener_only",
+    "metric_source": "individual two-column inference movies before comparison assembly"
+  },
+  "portrait02_blink_windows": [
+    {
+      "frame_zero_based": 480,
+      "seconds": 19.2,
+      "start_frame": 480,
+      "end_frame": 480,
+      "threshold_frames": 1,
+      "window_start_frame": 474,
+      "window_blink_scores": [
+        0.07698,
+        0.09188,
+        0.09979,
+        0.11958,
+        0.1189,
+        0.18312,
+        0.55146,
+        0.40624,
+        0.23305,
+        0.20429,
+        0.17658,
+        0.14193,
+        0.15549
+      ],
+      "original_window": [
+        0.07636,
+        0.08982,
+        0.08417,
+        0.10188,
+        0.10036,
+        0.19036,
+        0.59669,
+        0.43927,
+        0.23051,
+        0.22347,
+        0.18371,
+        0.16555,
+        0.13148
+      ],
+      "1325_window": [
+        0.09203,
+        0.1085,
+        0.10056,
+        0.1021,
+        0.09138,
+        0.18745,
+        0.53371,
+        0.35658,
+        0.22243,
+        0.20403,
+        0.17997,
+        0.15108,
+        0.14543
+      ]
+    },
+    {
+      "frame_zero_based": 706,
+      "seconds": 28.24,
+      "start_frame": 706,
+      "end_frame": 706,
+      "threshold_frames": 1,
+      "window_start_frame": 700,
+      "window_blink_scores": [
+        0.10263,
+        0.10405,
+        0.10124,
+        0.10791,
+        0.11993,
+        0.30854,
+        0.55609,
+        0.27478,
+        0.18128,
+        0.16655,
+        0.12261,
+        0.107,
+        0.10139
+      ],
+      "original_window": [
+        0.10358,
+        0.10326,
+        0.10186,
+        0.10155,
+        0.10685,
+        0.31689,
+        0.54076,
+        0.36699,
+        0.22767,
+        0.17655,
+        0.13903,
+        0.10816,
+        0.11648
+      ],
+      "1325_window": [
+        0.10075,
+        0.09667,
+        0.10822,
+        0.09407,
+        0.09605,
+        0.30415,
+        0.53783,
+        0.28075,
+        0.19614,
+        0.16399,
+        0.11723,
+        0.10711,
+        0.10681
+      ]
+    }
+  ]
+}
