@@ -38,6 +38,15 @@ jobs:
           fi
           python3 scripts/make_previews.py
       - run: cp previews/*-stream.mp4 public/
+      - name: Assemble the five step-1325 listener comparisons
+        run: |
+          cp -R step1325 public/step1325
+          mkdir -p public/step1325/videos
+          jq -r '.[] | [.file, .url, .sha256] | @tsv' step1325/media.json | while IFS=$'\t' read -r file url digest; do
+            dest="public/step1325/videos/$file"
+            curl --fail --location --retry 4 --silent --show-error "$url" -o "$dest"
+            echo "$digest  $dest" | sha256sum --check -
+          done
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

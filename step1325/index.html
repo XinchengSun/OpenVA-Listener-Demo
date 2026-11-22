@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenVA 聆听动作微调 · 1325 步</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; background: #fafaf8; color: #202723; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 1056px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) clamp(14px, 4vw, 32px) 52px; }
+    header { margin: 0 0 clamp(24px, 4vw, 38px); }
+    time, figcaption { font-variant-numeric: tabular-nums; }
+    time { color: #58635c; font-size: .9rem; }
+    h1 { margin: 8px 0 18px; line-height: 1.24; font-size: clamp(1.55rem, 4vw, 2.2rem); }
+    dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: .96rem; line-height: 1.65; }
+    dt { font-weight: 650; }
+    dd { margin: 0; color: #414b43; }
+    .sources { margin: 12px 0 0; font-size: .88rem; }
+    .sources a { color: #315c4e; text-underline-offset: .18em; }
+    figure { margin: 0 0 clamp(26px, 5vw, 46px); }
+    figcaption { margin-bottom: 8px; font-size: 1.05rem; font-weight: 650; }
+    video { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 560; background: #151a17; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <time datetime="2026-11-22">2026 年 11 月 22 日</time>
+      <h1>聆听动作微调 · 1325 步</h1>
+      <dl>
+        <dt>数据</dt><dd>共 494 条聆听视频，包括首批保留的 94 条和 400 条 MiniMax H3 视频。489 条用于训练，4 条用于验证，1 条预留测试。</dd>
+        <dt>实际训练量</dt><dd>每步从一条视频取一个连续 96 帧的窗口。到第 1325 步，489 条训练视频已各采样两次，其中 347 条又采样了一次，共 1325 个窗口。</dd>
+        <dt>微调方法</dt><dd>以原版 DyStream 为起点，用窗口后 95 帧的整脸动作作监督，只训练对方音频投影上的 rank-8 适配器（12,288 个参数）。人物说话时旁路适配器。前 1200 步用模型自己生成的动作作历史，后 125 步按 8 帧分块交替使用真实历史与预测历史。最后 100 步加入原版模型的整脸运动速度作为弱约束。</dd>
+        <dt>五人对照</dt><dd>左侧为原版，右侧为第 1325 步。每人都听同一段 126 秒音频，两侧共享肖像和随机种子 44，均用实时配置的一步去噪、25 帧/秒原速播放。</dd>
+      </dl>
+      <p class="sources"><a href="https://huggingface.co/datasets/xinxin713/openva-listener-494/blob/59641b2eb613e0caf3a873d0888b77ae4b742959/manifest.jsonl">数据清单</a> · <a href="training.json">训练覆盖记录</a> · <a href="https://github.com/XinchengSun/OpenVA-Dialogue/tree/96a9791fbef2f14276d81a79eb973b3b39b754bb/research/listener/step1325">权重与原始视频</a></p>
+    </header>
+    <figure id="portrait-01">
+      <figcaption>肖像 01</figcaption>
+      <video controls muted playsinline preload="none" width="1024" height="560" poster="posters/01.jpg" src="videos/01.mp4" aria-label="肖像 01 的原版与微调版聆听对照"></video>
+    </figure>
+    <figure id="portrait-02">
+      <figcaption>肖像 02</figcaption>
+      <video controls muted playsinline preload="none" width="1024" height="560" poster="posters/02.jpg" src="videos/02.mp4" aria-label="肖像 02 的原版与微调版聆听对照"></video>
+    </figure>
+    <figure id="portrait-03">
+      <figcaption>肖像 03</figcaption>
+      <video controls muted playsinline preload="none" width="1024" height="560" poster="posters/03.jpg" src="videos/03.mp4" aria-label="肖像 03 的原版与微调版聆听对照"></video>
+    </figure>
+    <figure id="portrait-04">
+      <figcaption>肖像 04</figcaption>
+      <video controls muted playsinline preload="none" width="1024" height="560" poster="posters/04.jpg" src="videos/04.mp4" aria-label="肖像 04 的原版与微调版聆听对照"></video>
+    </figure>
+    <figure id="portrait-05">
+      <figcaption>肖像 05</figcaption>
+      <video controls muted playsinline preload="none" width="1024" height="560" poster="posters/05.jpg" src="videos/05.mp4" aria-label="肖像 05 的原版与微调版聆听对照"></video>
+    </figure>
+  </main>
+  <script>
+    const videos = [...document.querySelectorAll('video')];
+    let selected = null;
+    const visible = new Map();
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    for (const video of videos) {
+      video.addEventListener('play', () => {
+        selected = video;
+        videos.forEach(other => { if (other !== video) other.pause(); });
+      });
+    }
+
+    function followViewport() {
+      if (document.hidden || reduceMotion.matches) return;
+      const ranked = videos.filter(v => (visible.get(v) || 0) >= .38)
+        .sort((a, b) => visible.get(b) - visible.get(a));
+      const next = ranked[0];
+      if (!next) {
+        if (selected && visible.get(selected) === 0) { selected.pause(); selected = null; }
+        return;
+      }
+      if (next !== selected) {
+        if (selected) selected.pause();
+        selected = next;
+        next.play().catch(() => {});
+      }
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => visible.set(entry.target, entry.intersectionRatio));
+        followViewport();
+      }, { threshold: [0, .25, .38, .5, .65, .8, 1] });
+      videos.forEach(video => observer.observe(video));
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) videos.forEach(video => video.pause());
+    });
+  </script>
+</body>
+</html>

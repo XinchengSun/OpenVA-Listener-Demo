@@ -1,0 +1,103 @@
+{
+  "checkpoint": {
+    "step": 1325,
+    "sha256": "b91cc2df6f510d9b1c0cc783bed78662343b23aea92c61c11640cf0260aa5741"
+  },
+  "dataset": {
+    "revision": "59641b2eb613e0caf3a873d0888b77ae4b742959",
+    "public_manifest_sha256": "b2f76a02350ee670afdc4167e4e9ff811417ba806b8b69fcbf28970159b5782d",
+    "training_manifest_sha256": "7fd5d8e178510a1a2163b8a039c9362c05fd27ccd3fdb97e97de779d75fa31b0",
+    "collections": [
+      {
+        "name": "initial",
+        "kept": 94,
+        "train": 89,
+        "validation": 4,
+        "held_out_test": 1
+      },
+      {
+        "name": "MiniMax H3",
+        "kept": 400,
+        "train": 400,
+        "validation": 0,
+        "held_out_test": 0
+      }
+    ],
+    "total": 494,
+    "train": 489,
+    "validation": 4,
+    "held_out_test": 1
+  },
+  "observed_training": {
+    "sampled_windows": 1325,
+    "distinct_train_video_ids": 489,
+    "validation_or_test_ids_seen": 0,
+    "sampled_twice": 142,
+    "sampled_three_times": 347,
+    "frames_per_window": 96,
+    "supervised_frames": 95,
+    "epoch_unique_counts": [
+      489,
+      489,
+      347
+    ]
+  },
+  "training_log_files": [
+    {
+      "steps": [
+        1,
+        1200
+      ],
+      "sha256": "ff21fa46f44777fd1776243d09682fc2d002e862c94afdb5e684c9dbd783d0ea"
+    },
+    {
+      "steps": [
+        1201,
+        1225
+      ],
+      "sha256": "fc433c0bb255b304a9f13845c716c51c1947f51af7e60198e8d6009c796290dd"
+    },
+    {
+      "steps": [
+        1226,
+        1300
+      ],
+      "sha256": "01e61bbb61d797e30a000731bc7e62c8fe9850f88884b674d69f5b2f8ffbb2df"
+    },
+    {
+      "steps": [
+        1301,
+        1325
+      ],
+      "sha256": "b9098d59735889b6f46cc8a875c8174032d3d5c46f44f91b6fc9172c02a037f9"
+    }
+  ],
+  "method": {
+    "initialization": "original DyStream",
+    "updated_parameters": [
+      "audio_other_proj.down.weight",
+      "audio_other_proj.up.weight"
+    ],
+    "trainable_parameter_count": 12288,
+    "adapter_rank": 8,
+    "training_denoising_steps": 5,
+    "speaker_adapter_bypassed": true,
+    "history": {
+      "1-1200": "self-generated",
+      "1201-1325": "alternating aligned and closed-loop 8-frame blocks"
+    },
+    "1226-1325": "weak auxiliary supervision from frozen teacher whole-face motion velocity"
+  },
+  "comparison": {
+    "mode": "listener only",
+    "portraits": 5,
+    "seconds_per_portrait": 126,
+    "fps": 25,
+    "seed": 44,
+    "inference_denoising_steps": 1,
+    "audio_sha256": "c99bf95e972579614a70882ab736c85e0da7ee0f2c8192c8f717d12b48617bc1",
+    "noise_sha256": "6b1fb8d094c259e965be156bd029ae44aa3567f0061dcbd038a78a0042e215a6",
+    "left": "original",
+    "right": "listener step 1325"
+  }
+}

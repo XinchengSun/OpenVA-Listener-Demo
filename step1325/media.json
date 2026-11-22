@@ -1,0 +1,32 @@
+[
+  {
+    "file": "01.mp4",
+    "url": "https://raw.githubusercontent.com/XinchengSun/OpenVA-Dialogue/96a9791fbef2f14276d81a79eb973b3b39b754bb/research/listener/step1325/videos/01.mp4",
+    "sha256": "7d83346cb3aaeca43d67d855cc6f9e3665c0eefb2f163440fb60ddb1edc1058a",
+    "bytes": 37991966
+  },
+  {
+    "file": "02.mp4",
+    "url": "https://raw.githubusercontent.com/XinchengSun/OpenVA-Dialogue/96a9791fbef2f14276d81a79eb973b3b39b754bb/research/listener/step1325/videos/02.mp4",
+    "sha256": "29e22d21d8b602f5852ecfee5099f4beab146fcc9c0b9089d62468e13e0da288",
+    "bytes": 51479587
+  },
+  {
+    "file": "03.mp4",
+    "url": "https://raw.githubusercontent.com/XinchengSun/OpenVA-Dialogue/96a9791fbef2f14276d81a79eb973b3b39b754bb/research/listener/step1325/videos/03.mp4",
+    "sha256": "fce18a0fb62eca9922052421b2d771dca05fa9cfad4b38f8a8dc8d9e21eaff7d",
+    "bytes": 53538206
+  },
+  {
+    "file": "04.mp4",
+    "url": "https://raw.githubusercontent.com/XinchengSun/OpenVA-Dialogue/96a9791fbef2f14276d81a79eb973b3b39b754bb/research/listener/step1325/videos/04.mp4",
+    "sha256": "93d646b0e1f04107d6b1b186c90080d6ec08f7ff74ad54fca7c95d263ddb96fb",
+    "bytes": 69370957
+  },
+  {
+    "file": "05.mp4",
+    "url": "https://raw.githubusercontent.com/XinchengSun/OpenVA-Dialogue/96a9791fbef2f14276d81a79eb973b3b39b754bb/research/listener/step1325/videos/05.mp4",
+    "sha256": "c0186fda387cd6b9c2dc5d85e1f0e3a2c3cf0107511ea5b092fcba3003608f9e",
+    "bytes": 58701809
+  }
+]
