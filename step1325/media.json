@@ -28,5 +28,11 @@
     "url": "https://github.com/XinchengSun/OpenVA-Listener-Demo/releases/download/listener-1700-three-way/05.mp4",
     "sha256": "7efa57b978b07a58bb2d9a7f729136c13e82a5b67dd406b29d4e433621f75360",
     "bytes": 63450446
+  },
+  {
+    "file": "female-1700.mp4",
+    "url": "https://github.com/XinchengSun/OpenVA-Listener-Demo/releases/download/listener-1700-three-way/female.mp4",
+    "sha256": "73eba2438e1e89ba064c726b2d7e216198b3cce177e97d8e7e5ad11387d55606",
+    "bytes": 42439628
   }
 ]
