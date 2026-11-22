@@ -9,11 +9,10 @@ permissions:
   id-token: write
 concurrency: pages
 jobs:
-  publish:
+  assemble:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.release.outputs.page_url }}
+    outputs:
+      artifact_name: ${{ steps.bundle.outputs.name }}
     steps:
       - uses: actions/checkout@v4
       - name: Assemble verified media
@@ -38,7 +37,7 @@ jobs:
           fi
           python3 scripts/make_previews.py
       - run: cp previews/*-stream.mp4 public/
-      - name: Assemble the five step-1325 listener comparisons
+      - name: Assemble the five listener comparisons
         run: |
           cp -R step1325 public/step1325
           mkdir -p public/step1325/videos
@@ -48,8 +47,29 @@ jobs:
             echo "$digest  $dest" | sha256sum --check -
           done
       - uses: actions/configure-pages@v5
+      - id: bundle
+        run: echo "name=github-pages-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
+          name: ${{ steps.bundle.outputs.name }}
+  publish:
+    needs: assemble
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.release.outputs.page_url || steps.retry.outputs.page_url }}
+    steps:
       - id: release
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+        with:
+          artifact_name: ${{ needs.assemble.outputs.artifact_name }}
+      - name: Allow time for the uploaded archive to appear
+        if: steps.release.outcome == 'failure'
+        run: sleep 15
+      - id: retry
+        if: steps.release.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ needs.assemble.outputs.artifact_name }}
