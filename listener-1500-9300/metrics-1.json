@@ -1,0 +1,20 @@
+{
+  "1500": {
+    "coverage": 1.0,
+    "mild_seconds": 0.12,
+    "wide_seconds": 0.0,
+    "lip_p90": -0.00046001339883756085,
+    "deep": 4,
+    "multi_deep": 1,
+    "flash": 3
+  },
+  "9300": {
+    "coverage": 1.0,
+    "mild_seconds": 0.2,
+    "wide_seconds": 0.0,
+    "lip_p90": 0.0013323387401497988,
+    "deep": 1,
+    "multi_deep": 0,
+    "flash": 1
+  }
+}
