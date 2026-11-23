@@ -39,6 +39,7 @@ jobs:
       - run: cp previews/*-stream.mp4 public/
       - name: Assemble the five listener comparisons
         run: |
+          cp -R listener-1500-9300 public/
           cp -R step1325 public/step1325
           mkdir -p public/step1325/videos
           jq -r '.[] | [.file, .url, .sha256] | @tsv' step1325/media.json | while IFS=$'\t' read -r file url digest; do
